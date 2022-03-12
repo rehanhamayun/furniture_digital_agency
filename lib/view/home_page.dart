@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_digital_agency/view/product_page.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
@@ -74,6 +76,8 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 setState(() {
                   _changeButton = true;
+
+                  Get.to(() => const ProductPage());
                 });
               },
               child: Text(
