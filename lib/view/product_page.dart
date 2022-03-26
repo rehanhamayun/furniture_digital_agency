@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_digital_agency/view/chair_data.dart';
 import 'package:furniture_digital_agency/widgets.dart';
+
 import 'package:sizer/sizer.dart';
+import 'package:get/get.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({Key? key}) : super(key: key);
@@ -77,6 +79,7 @@ class _ProductPageState extends State<ProductPage> {
                   children: [
                     InkWell(
                       onTap: () {
+                        Get.to(() => ChairData());
                         setState(() {
                           _tabColor = true;
                         });
@@ -162,12 +165,6 @@ class _ProductPageState extends State<ProductPage> {
             ),
 
             //END CATEGORIES
-            Container(
-              child: _tabColor == true ? ChairData() : null,
-            ),
-            Container(
-              child: _secondController == true ? ChairData() : null,
-            ),
           ],
         ),
       ),

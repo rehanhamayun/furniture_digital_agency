@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:furniture_digital_agency/controller/furniture_controller.dart';
+import 'package:get/instance_manager.dart';
 
 class ChairData extends StatelessWidget {
-  const ChairData({Key? key}) : super(key: key);
+  // Dependency Injection
+  FurnitureController furnitureController = Get.put(FurnitureController());
+
+  ChairData({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Container(
-        color: Colors.amber,
-        height: 40.h,
-        width: double.infinity,
-        child: ListView.builder(
-            itemCount: 5,
-            itemBuilder: (BuildContext, index) {
-              return Card(
-                elevation: 10,
-                child: Text("Chair Data"),
-              );
-            }),
+    return Scaffold(
+      body: Column(
+        children: [
+          Text("DATA: ${furnitureController.furniture.length.toString()} ")
+        ],
       ),
     );
   }
